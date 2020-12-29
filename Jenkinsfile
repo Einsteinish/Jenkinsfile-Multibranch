@@ -1,10 +1,20 @@
 pipeline {
-    agent any 
+    agent any
     stages {
-        stage('Stage 1') {
+        stage('build') {
             steps {
-                echo 'Hello world, this is multibranch pipeline!' 
+                echo 'Hello world, this is multibranch pipeline for Dev branch'
+            }
+        }
+        stage('test') {
+            steps {
+                echo 'testing Dev...'
+            }
+        }
+        stage('deploy') {
+            steps {
+                echo 'deploying Dev...'
             }
         }
     }
-}
+}   
